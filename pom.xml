@@ -491,5 +491,11 @@
             </reporting>
         </profile>
     </profiles>
-
+   <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0pz6lccstu3k-artifactory-primary-0-releases</name>
+        <url>https://adminbhanu.jfrog.io/artifactory/demo-libs-release</url>
+    </repository>
+</distributionManagement>
 </project>
