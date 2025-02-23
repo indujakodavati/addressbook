@@ -12,4 +12,4 @@ else
 fi
 
 cd /home/ec2-user/addressbook
-mvn package
+mvn pmd:pmd
