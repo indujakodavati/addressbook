@@ -1,29 +1,35 @@
 pipeline {
-   agent none
-   tools{
-//     jdk "myjava"
-        maven "mymaven"
-   }
+    agent any
+
     stages {
-        stage('Compile') { //prod
-        agent any
+        stage('compile') {
             steps {
-                echo "Compile the code"
-                sh "mvn compile"
+                echo 'compiling the code'
             }
         }
-         stage('UnitTest') { //test
-         agent any
+        stage('codereview') {
             steps {
-                echo "Test the code"
-                sh "mvn test"
+                echo 'revewing the code with pmd'
             }
         }
-         stage('Package') {//dev
-        agent {label 'linux_slave'}
+        stage('unittest') {
             steps {
-                echo "Package the code"
-                sh "mvn package"
+                echo 'testing the code with junit'
+            }
+        }
+        stage('coverageanalysis') {
+            steps {
+                echo 'static code coverage with jacoco'
+            }
+        }
+        stage('package') {
+            steps {
+                echo 'packaging the code'
+            }
+        }
+        stage('publish') {
+            steps {
+                echo 'publishing the artifact to jfrog'
             }
         }
     }
