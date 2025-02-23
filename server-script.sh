@@ -6,7 +6,7 @@ if [-d "addressbook"]
 then
     echo "repo is cloned and exists"
     cd /home/ec2-user/addressbook
-    git pull origin demo1
+    # git pull origin demo1
 else
     git clone https://github.com/induja2609/addressbook.git
 fi
