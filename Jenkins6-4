@@ -13,6 +13,10 @@ pipeline {
 
    }
 
+   environment{
+        Build_Server = 'ec2-user@172.31.2.38'
+   }
+
     stages {
         stage('compile') {
             agent any
@@ -70,8 +74,8 @@ pipeline {
                 script{
                     sshagent(['slave2']) {
                         echo "Packaging the code ${params.APPVERSION}"
-                    sh "scp -o StrictHostKeyChecking=no server-script.sh ec2-user@172.31.2.38:/home/ec2-user"
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.2.38 'bash ~/server-script.sh'"
+                    sh "scp -o StrictHostKeyChecking=no server-script.sh ${Build_Server}:/home/ec2-user"
+                    sh "ssh -o StrictHostKeyChecking=no ${Build_Server} 'bash ~/server-script.sh'"
                     }
                 }
             }
