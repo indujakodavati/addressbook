@@ -492,9 +492,14 @@
         </profile>
     </profiles>
    <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>demo-libs-release</name>
+        <url>https://induja.jfrog.io/artifactory/demo-libs-release</url>
+    </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>a0fyhoohi8pqq-artifactory-primary-0-snapshots</name>
+        <name>demo-libs-snapshot</name>
         <url>https://induja.jfrog.io/artifactory/demo-libs-snapshot</url>
     </snapshotRepository>
 </distributionManagement>
