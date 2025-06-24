@@ -72,7 +72,7 @@ pipeline {
             agent any
             steps {
                 script{
-                    sshagent(['slave2']) {
+                    sshagent(['apssdc_jenkins_slave2']) {
                         echo "Packaging the code ${params.APPVERSION}"
                     sh "scp -o StrictHostKeyChecking=no server-script.sh ${Build_Server}:/home/ec2-user"
                     sh "ssh -o StrictHostKeyChecking=no ${Build_Server} 'bash ~/server-script.sh'"
