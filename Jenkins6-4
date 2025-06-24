@@ -59,7 +59,7 @@ pipeline {
         }
         
         stage('coverageanalysis') {
-            agent {label 'linux_slave'}
+            agent {label 'jenkins_slave_apssdc'}
             steps {
                 script{
                     echo 'static code coverage with jacoco'
