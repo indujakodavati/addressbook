@@ -13,4 +13,4 @@ fi
 
 cd /home/ec2-user/addressbook
 mvn pmd:pmd # just running it for sample
-mvn package # getting compatibility issues with version of java, which can be further resolved using docker containers, etc..
+# mvn package # getting compatibility issues with version of java, which can be further resolved using docker containers, etc..
